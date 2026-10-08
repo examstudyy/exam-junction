@@ -1,10 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Notifications</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notifications - Exam Junction</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#f5f5f5;
+}
+
+.header{
+background:#0d47a1;
+color:white;
+padding:20px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
+}
+
+.container{
+padding:15px;
+padding-bottom:90px;
+}
+
+.notice{
+background:white;
+padding:15px;
+margin-bottom:10px;
+border-radius:12px;
+box-shadow:0 2px 5px rgba(0,0,0,.1);
+}
+
+.bottom{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:white;
+display:flex;
+justify-content:space-around;
+padding:10px;
+box-shadow:0 -2px 5px rgba(0,0,0,.1);
+}
+
+.bottom a{
+text-decoration:none;
+color:black;
+text-align:center;
+font-size:14px;
+}
+</style>
 </head>
+
 <body>
-<h1>🔔 Notifications</h1>
-<p>No notifications yet.</p>
+
+<div class="header">
+🔔 Notifications
+</div>
+
+<div class="container">
+
+<div class="notice">
+New SSC Maths Batch Added
+</div>
+
+<div class="notice">
+Percentage Notes Uploaded
+</div>
+
+<div class="notice">
+New Book Available
+</div>
+
+</div>
+
+<div class="bottom">
+<a href="index.html">🏠<br>Home</a>
+<a href="books.html">📚<br>Books</a>
+<a href="notifications.html">🔔<br>Notifications</a>
+<a href="leaderboard.html">🏆<br>Leaderboard</a>
+<a href="profile.html">👤<br>Profile</a>
+</div>
+
 </body>
 </html>
