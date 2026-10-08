@@ -1,17 +1,12 @@
 [
   {
-    "title":"SSC Maths Foundation",
-    "type":"free",
-    "link":"#"
-  }
-]
-[
-  {
-    "title":"SSC Maths Book",
-    "link":"https://example.com/book.pdf"
+    "title": "NCERT Class 10 Maths",
+    "type": "free",
+    "link": "https://drive.google.com/yourlink"
   },
   {
-    "title":"Railway Maths Notes",
-    "link":"https://example.com/notes.pdf"
+    "title": "Rakesh Yadav Maths",
+    "type": "paid",
+    "link": "https://drive.google.com/yourlink"
   }
 ]
