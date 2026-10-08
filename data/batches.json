@@ -1,7 +1,14 @@
 [
   {
     "title":"SSC Maths Foundation",
-    "type":"free",
+    "teacher":"Rahul Sir",
+    "locked":false,
+    "link":"https://your-link.com"
+  },
+  {
+    "title":"Railway Maths Target",
+    "teacher":"Aman Sir",
+    "locked":true,
     "link":"#"
   }
 ]
