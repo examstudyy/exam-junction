@@ -1,25 +1,25 @@
 [
   {
-    "title":"SSC Maths Foundation",
-    "teacher":"Rahul Sir",
-    "locked":false,
-    "link":"https://your-link.com"
+    "title": "SSC Maths Foundation",
+    "teacher": "Rahul Sir",
+    "locked": false,
+    "link": "https://your-link.com"
   },
   {
-    "title":"Railway Maths Target",
-    "teacher":"Aman Sir",
-    "locked":true,
-    "link":"#"
+    "title": "Railway Maths Target",
+    "teacher": "Aman Sir",
+    "locked": true,
+    "link": "#"
+  },
+  {
+    "title": "SSC CGL Premium",
+    "type": "paid",
+    "link": "paid.html"
+  },
+  {
+    "title": "SSC Maths Foundation",
+    "image": "https://your-image-link.jpg",
+    "type": "free",
+    "link": "batch.html"
   }
 ]
-{
-  "title":"SSC CGL Premium",
-  "type":"paid",
-  "link":"paid.html"
-}
-{
-  "title":"SSC Maths Foundation",
-  "image":"https://your-image-link.jpg",
-  "type":"free",
-  "link":"batch.html"
-}
