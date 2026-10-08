@@ -18,10 +18,8 @@ background:#f5f7fb;
 padding-bottom:80px;
 }
 
-/* HERO */
-
 .hero{
-background:linear-gradient(135deg,#0d6efd,#003b99);
+background:linear-gradient(135deg,#0d6efd,#0047ab);
 color:white;
 padding:30px 20px;
 text-align:center;
@@ -29,10 +27,10 @@ text-align:center;
 
 .hero h1{
 font-size:32px;
-margin-bottom:8px;
 }
 
 .hero p{
+margin-top:8px;
 opacity:.9;
 }
 
@@ -50,8 +48,6 @@ font-size:22px;
 font-size:13px;
 }
 
-/* SEARCH */
-
 .search-box{
 padding:15px;
 }
@@ -65,8 +61,6 @@ font-size:16px;
 box-shadow:0 2px 8px rgba(0,0,0,.1);
 }
 
-/* QUICK MENU */
-
 .quick-menu{
 display:grid;
 grid-template-columns:repeat(2,1fr);
@@ -79,13 +73,11 @@ background:white;
 padding:18px;
 text-decoration:none;
 color:black;
-text-align:center;
 font-weight:bold;
+text-align:center;
 border-radius:14px;
 box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
-
-/* SECTION */
 
 .section-title{
 padding:0 15px;
@@ -93,8 +85,6 @@ font-size:22px;
 font-weight:bold;
 margin-bottom:10px;
 }
-
-/* BATCH */
 
 .batch-card{
 background:white;
@@ -113,7 +103,7 @@ color:#666;
 margin-bottom:12px;
 }
 
-.batch-card a{
+.btn{
 display:inline-block;
 padding:10px 16px;
 background:#0d6efd;
@@ -122,17 +112,9 @@ text-decoration:none;
 border-radius:10px;
 }
 
-.lock-badge{
-float:right;
-background:red;
-color:white;
-padding:4px 10px;
-border-radius:20px;
-font-size:12px;
-margin-bottom:10px;
+.lock{
+background:#dc3545;
 }
-
-/* BOTTOM NAV */
 
 .bottom-nav{
 position:fixed;
@@ -159,7 +141,7 @@ text-align:center;
 
 <header class="hero">
 <h1>EXAM JUNCTION</h1>
-<p>SSC • Railway • Banking • Defence</p>
+<p>SSC • Railway • Competitive Exams</p>
 
 <div class="stats">
 <div>
@@ -180,7 +162,7 @@ text-align:center;
 </header>
 
 <div class="search-box">
-<input type="text" id="searchInput" placeholder="🔍 Search Batch">
+<input type="text" placeholder="🔍 Search Batch">
 </div>
 
 <div class="quick-menu">
@@ -191,10 +173,26 @@ text-align:center;
 </div>
 
 <div class="section-title">
-🔥 Premium Batches
+🔥 Featured Batches
 </div>
 
-<div id="batchContainer"></div>
+<div class="batch-card">
+<h3>SSC Maths Foundation</h3>
+<p>Complete SSC Maths Preparation</p>
+<a href="#" class="btn">Open Batch</a>
+</div>
+
+<div class="batch-card">
+<h3>Railway Maths Target</h3>
+<p>Railway Maths Special Batch</p>
+<a href="#" class="btn">Open Batch</a>
+</div>
+
+<div class="batch-card">
+<h3>Advanced Maths Master</h3>
+<p>Premium Paid Batch</p>
+<a href="#" class="btn lock">🔒 Locked</a>
+</div>
 
 <div class="bottom-nav">
 <a href="index.html">🏠<br>Home</a>
@@ -203,67 +201,6 @@ text-align:center;
 <a href="leaderboard.html">🏆<br>Leaderboard</a>
 <a href="profile.html">👤<br>Profile</a>
 </div>
-
-<script>
-
-fetch("data/batches.json")
-.then(response => response.json())
-.then(data => {
-
-const container =
-document.getElementById("batchContainer");
-
-function render(items){
-
-container.innerHTML="";
-
-items.forEach(batch=>{
-
-container.innerHTML += `
-
-<div class="batch-card">
-
-${batch.locked ?
-'<span class="lock-badge">🔒 Paid</span>' : ''}
-
-<h3>${batch.title}</h3>
-
-<p>${batch.teacher}</p>
-
-<a href="${batch.link}">
-${batch.locked ? 'Unlock Batch' : 'Open Batch'}
-</a>
-
-</div>
-
-`;
-
-});
-
-}
-
-render(data);
-
-document
-.getElementById("searchInput")
-.addEventListener("keyup",function(){
-
-let keyword =
-this.value.toLowerCase();
-
-let filtered =
-data.filter(item =>
-item.title.toLowerCase()
-.includes(keyword)
-);
-
-render(filtered);
-
-});
-
-});
-
-</script>
 
 </body>
 </html>
