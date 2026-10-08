@@ -71,23 +71,8 @@ font-size:14px;
 📚 Books
 </div>
 
-<div class="container">
-
-<div class="book">
-<h3>NCERT Class 10 Science</h3>
-<a href="PDF_LINK_HERE" target="_blank">Open PDF</a>
-</div>
-
-<div class="book">
-<h3>NCERT Class 10 Maths</h3>
-<a href="PDF_LINK_HERE" target="_blank">Open PDF</a>
-</div>
-
-<div class="book">
-<h3>Reasoning Book</h3>
-<a href="PDF_LINK_HERE" target="_blank">Open PDF</a>
-</div>
-
+<div class="container" id="books">
+Loading...
 </div>
 
 <div class="bottom">
@@ -96,6 +81,31 @@ font-size:14px;
 <a href="leaderboard.html">🏆<br>Leaderboard</a>
 <a href="profile.html">👤<br>Profile</a>
 </div>
+
+<script>
+fetch("data/books.json")
+.then(r=>r.json())
+.then(data=>{
+
+let html="";
+
+data.forEach(book=>{
+
+html += `
+<div class="book">
+<h3>${book.title}</h3>
+<a href="${book.link}" target="_blank">
+Open Book
+</a>
+</div>
+`;
+
+});
+
+document.getElementById("books").innerHTML = html;
+
+});
+</script>
 
 </body>
 </html>
