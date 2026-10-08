@@ -1,11 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Books - Exam Junction</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#f5f5f5;
+}
+
+.header{
+background:#0d47a1;
+color:white;
+padding:20px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
+}
+
+.container{
+padding:15px;
+padding-bottom:90px;
+}
+
+.book{
+background:white;
+padding:15px;
+margin-bottom:10px;
+border-radius:12px;
+box-shadow:0 2px 5px rgba(0,0,0,.1);
+}
+
+.book a{
+display:inline-block;
+margin-top:10px;
+background:#0d47a1;
+color:white;
+padding:8px 15px;
+border-radius:8px;
+text-decoration:none;
+}
+
+.bottom{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:white;
+display:flex;
+justify-content:space-around;
+padding:10px;
+box-shadow:0 -2px 5px rgba(0,0,0,.1);
+}
+
+.bottom a{
+text-decoration:none;
+color:black;
+text-align:center;
+font-size:14px;
+}
+</style>
 </head>
+
 <body>
-<h1>📚 Books</h1>
-<p>Free Books</p>
-<p>Paid Books</p>
+
+<div class="header">
+📚 Books
+</div>
+
+<div class="container">
+
+<div class="book">
+<h3>NCERT Class 10 Science</h3>
+<a href="PDF_LINK_HERE" target="_blank">Open PDF</a>
+</div>
+
+<div class="book">
+<h3>NCERT Class 10 Maths</h3>
+<a href="PDF_LINK_HERE" target="_blank">Open PDF</a>
+</div>
+
+<div class="book">
+<h3>Reasoning Book</h3>
+<a href="PDF_LINK_HERE" target="_blank">Open PDF</a>
+</div>
+
+</div>
+
+<div class="bottom">
+<a href="books.html">📚<br>Books</a>
+<a href="notifications.html">🔔<br>Notifications</a>
+<a href="leaderboard.html">🏆<br>Leaderboard</a>
+<a href="profile.html">👤<br>Profile</a>
+</div>
+
 </body>
 </html>
