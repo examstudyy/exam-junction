@@ -1,7 +1,14 @@
 [
   {
-    "title":"SSC Maths Foundation",
-    "type":"free",
-    "link":"#"
+    "rank": "🥇",
+    "name": "Rahul"
+  },
+  {
+    "rank": "🥈",
+    "name": "Aman"
+  },
+  {
+    "rank": "🥉",
+    "name": "Priya"
   }
 ]
