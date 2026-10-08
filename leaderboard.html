@@ -63,14 +63,8 @@ font-size:14px;
 🏆 Leaderboard
 </div>
 
-<div class="container">
-
-<div class="rank">🥇 Rank 1 - Student Name</div>
-
-<div class="rank">🥈 Rank 2 - Student Name</div>
-
-<div class="rank">🥉 Rank 3 - Student Name</div>
-
+<div class="container" id="leaderboard">
+Loading...
 </div>
 
 <div class="bottom">
@@ -80,6 +74,28 @@ font-size:14px;
 <a href="leaderboard.html">🏆<br>Leaderboard</a>
 <a href="profile.html">👤<br>Profile</a>
 </div>
+
+<script>
+fetch("data/leaderboard.json")
+.then(r=>r.json())
+.then(data=>{
+
+let html="";
+
+data.forEach(item=>{
+
+html += `
+<div class="rank">
+${item.rank} ${item.name}
+</div>
+`;
+
+});
+
+document.getElementById("leaderboard").innerHTML = html;
+
+});
+</script>
 
 </body>
 </html>
