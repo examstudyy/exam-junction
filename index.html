@@ -46,7 +46,51 @@ border-radius:12px;
 font-size:16px;
 box-shadow:0 2px 8px rgba(0,0,0,.1);
 }
+<header class="hero">
+    <div class="overlay">
+        <h1>EXAM JUNCTION</h1>
+        <p>SSC • Railway • Banking • Defence</p>
 
+        <div class="stats">
+            <div>
+                <h2>500+</h2>
+                <span>Batches</span>
+            </div>
+
+            <div>
+                <h2>10K+</h2>
+                <span>Students</span>
+            </div>
+
+            <div>
+                <h2>24×7</h2>
+                <span>Support</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Search Batch">
+</div>
+
+<div class="quick-menu">
+
+<a href="books.html">📚 Books</a>
+
+<a href="notifications.html">🔔 Notifications</a>
+
+<a href="leaderboard.html">🏆 Leaderboard</a>
+
+<a href="profile.html">👤 Profile</a>
+
+</div>
+
+<div class="section-title">
+🔥 Premium Batches
+</div>
+
+<div id="batchContainer"></div>
 .section-title{
 padding:0 15px;
 margin-top:10px;
@@ -95,7 +139,61 @@ justify-content:space-around;
 padding:12px 0;
 box-shadow:0 -2px 10px rgba(0,0,0,.1);
 }
+<script>
+fetch("data/batches.json")
+.then(res=>res.json())
+.then(data=>{
 
+const container =
+document.getElementById("batchContainer");
+
+function render(items){
+
+container.innerHTML="";
+
+items.forEach(batch=>{
+
+container.innerHTML+=`
+<div class="batch-card">
+
+${batch.locked ?
+'<span class="lock-badge">🔒 Paid</span>' : ''}
+
+<h3>${batch.title}</h3>
+
+<p>${batch.teacher}</p>
+
+<a href="${batch.link}">
+${batch.locked ? 'Unlock Batch' : 'Open Batch'}
+</a>
+
+</div>
+`;
+
+});
+
+}
+
+render(data);
+
+document
+.getElementById("searchInput")
+.addEventListener("keyup",function(){
+
+let keyword =
+this.value.toLowerCase();
+
+let filtered =
+data.filter(item =>
+item.title.toLowerCase()
+.includes(keyword));
+
+render(filtered);
+
+});
+
+});
+</script>
 .bottom-nav a{
 text-decoration:none;
 color:#333;
@@ -108,16 +206,51 @@ text-align:center;
 <body>
 
 <div class="header">
-<h1>EXAM JUNCTION</h1>
-<p>SSC • Railway • Maths</p>
+<header class="hero">
+    <div class="overlay">
+        <h1>EXAM JUNCTION</h1>
+        <p>SSC • Railway • Banking • Defence</p>
+
+        <div class="stats">
+            <div>
+                <h2>500+</h2>
+                <span>Batches</span>
+            </div>
+
+            <div>
+                <h2>10K+</h2>
+                <span>Students</span>
+            </div>
+
+            <div>
+                <h2>24×7</h2>
+                <span>Support</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Search Batch">
 </div>
 
-<div class="search">
-<input type="text" placeholder="🔍 Search Batch">
+<div class="quick-menu">
+
+<a href="books.html">📚 Books</a>
+
+<a href="notifications.html">🔔 Notifications</a>
+
+<a href="leaderboard.html">🏆 Leaderboard</a>
+
+<a href="profile.html">👤 Profile</a>
+
 </div>
 
 <div class="section-title">
-🔥 Featured Batches
+🔥 Premium Batches
+</div>
+
+<div id="batchContainer"></div>
 </div>
 
 <div class="batch-card">
